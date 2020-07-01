@@ -4,13 +4,11 @@ install:
      - sudo dpkg -i binaries/hugo*.deb
      - pip install Pygments
 
-before_script:
+before_script: |
     if [ -d "/public" ]; then
     rm -rf /public && echo "Old public dir deleted ..."
     fi
-    if [ ! -f ".gitignore"]; then
-    touch .gitignore
-    fi  
+ 
 
 script:
     - hugo 
